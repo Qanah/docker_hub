@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+
+  laravel-gmp:
+    image: qanah/laravel-gmp
+    build: .

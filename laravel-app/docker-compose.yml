@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+
+  laravel-app:
+    image: qanah/laravel-app
+    build: .

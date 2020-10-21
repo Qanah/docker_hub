@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+
+  jawab-app:
+    image: qanah/jawab-app
+    build: .
