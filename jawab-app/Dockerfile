@@ -18,21 +18,21 @@ RUN apt-get -y update
 
 RUN apt-get -y install \
     git curl software-properties-common apache2 \
-    php7.4 libapache2-mod-php7.4 \
-    php7.4-mysql \
-    php7.4-curl \
-    php7.4-zip \
-    php7.4-gd \
-    php7.4-intl \
-    php7.4-imap \
-    php7.4-pspell \
-    php7.4-sqlite3 \
-    php7.4-tidy \
-    php7.4-xmlrpc \
-    php7.4-xsl \
-    php7.4-mbstring \
-    php7.4-dev \
-    php7.4-redis \
+    php7.2 libapache2-mod-php7.2 \
+    php7.2-mysql \
+    php7.2-curl \
+    php7.2-zip \
+    php7.2-gd \
+    php7.2-intl \
+    php7.2-imap \
+    php7.2-pspell \
+    php7.2-sqlite3 \
+    php7.2-tidy \
+    php7.2-xmlrpc \
+    php7.2-xsl \
+    php7.2-mbstring \
+    php7.2-dev \
+    php7.2-redis \
     php-memcache \
     php-imagick \
     php-pear
@@ -56,8 +56,8 @@ VOLUME ["/var/www/html/", "/etc/httpd/", "/var/log/"]
 RUN a2enmod rewrite expires
 
 # Configure PHP
-ADD files/php.ini /etc/php/7.4/apache2/conf.d/
-ADD files/cli.ini /etc/php/7.4/cli/conf.d/
+ADD files/php.ini /etc/php/7.2/apache2/conf.d/
+ADD files/cli.ini /etc/php/7.2/cli/conf.d/
 
 # Configure vhost
 ADD files/default.conf /etc/apache2/sites-enabled/000-default.conf
