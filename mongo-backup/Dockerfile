@@ -28,3 +28,6 @@ ENV ACCESS_KEY="" SECRET_KEY="" BUCKET="" DBS="" REGION="us-east-1"
 ENV CRON_D_BACKUP="0 1,9,17    * * * root   /backup.sh | logger\n"
 
 COPY backup.sh restore.sh /
+
+RUN chmod +x /backup.sh
+RUN chmod +x /restore.sh
