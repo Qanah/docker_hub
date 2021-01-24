@@ -49,9 +49,17 @@ VOLUME ["/var/www/html/", "/etc/httpd/", "/var/log/"]
 
 RUN a2enmod rewrite expires
 
+RUN apt-get -y install wget
+RUN wget -O - http://aptget.chilkat.io/chilkat.gpg.key | apt-key add -
+RUN add-apt-repository "deb http://aptget.chilkat.io/repos chilkat main"
+RUN apt-get -y update
+RUN apt-get -y install php7.4-chilkat
+
 # Configure PHP
 ADD files/php.ini /etc/php/7.4/apache2/conf.d/
 ADD files/cli.ini /etc/php/7.4/cli/conf.d/
+
+RUN cp /usr/share/php/20190902/chilkat_9_5_0.php /usr/share/php
 
 # Configure vhost
 ADD files/default.conf /etc/apache2/sites-enabled/000-default.conf

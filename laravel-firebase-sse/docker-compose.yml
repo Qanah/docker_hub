@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+
+  laravel-firebase-sse:
+    image: qanah/laravel-firebase-sse
+    build: .

@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+
+  laravel-mongo:
+    image: qanah/laravel-mongo
+    build: .

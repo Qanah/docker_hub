@@ -17,7 +17,6 @@ RUN LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php
 RUN apt-get -y update
 
 RUN apt-get -y install \
-    git curl software-properties-common apache2 \
     php7.2 libapache2-mod-php7.2 \
     php7.2-mysql \
     php7.2-curl \
