@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+
+  supervisor-app:
+    image: qanah/supervisor-app
+    build: .

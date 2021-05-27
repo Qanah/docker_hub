@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+
+  nxt-app:
+    image: qanah/nxt-app
+    build: .

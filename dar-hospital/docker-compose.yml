@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+
+  dar-hospital:
+    image: qanah/dar-hospital
+    build: .
