@@ -45,6 +45,11 @@ RUN apt-get -y install nodejs
 # Install supervisor
 RUN apt-get -y install supervisor
 
+# Install imagick
+RUN apt-get -y install gcc make autoconf libc-dev pkg-config
+RUN apt-get -y install libmagickwand-dev
+RUN pecl install imagick
+
 VOLUME ["/var/www/html/", "/etc/httpd/", "/var/log/"]
 
 RUN a2enmod rewrite expires
