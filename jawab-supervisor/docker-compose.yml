@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+
+  jawab-supervisor:
+    image: qanah/jawab-supervisor
+    build: .
