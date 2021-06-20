@@ -30,6 +30,7 @@ RUN apt-get -y install \
     php7.1-mbstring \
     php7.1-dev \
     php7.1-redis \
+    php7.1-soap \
     php-memcache \
     php-imagick \
     php-pear
