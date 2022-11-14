@@ -42,7 +42,7 @@ RUN curl -sL https://deb.nodesource.com/setup_15.x | bash -
 RUN apt-get -y install nodejs
 
 # Install yacron
-RUN apt-get -y install python3-pip
+RUN apt-get -y install python3-dev
 RUN pip3 install yacron
 
 VOLUME ["/var/www/html/", "/etc/httpd/", "/var/log/"]
