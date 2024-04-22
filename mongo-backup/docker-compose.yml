@@ -3,5 +3,5 @@ version: '3.8'
 services:
 
   mongo-backup:
-    image: qanah/mongo-backup
-    build: .
+    image: qanah/mongo-backup:${TAG:-4.0}
+    build: ${TAG:-4.0}
