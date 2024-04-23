@@ -10,8 +10,11 @@ RUN apt-get -qqy update && \
 # Install s3cmd using pip3
 RUN pip3 install s3cmd
 
-# Add MongoDB repository key
-RUN apt-get update && apt-get install -y gnupg curl
+# Update package lists
+RUN apt-get update
+
+# Install necessary dependencies
+RUN apt-get install -y gnupg curl
 
 # Add MongoDB repository to sources list
 RUN curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg --dearmor
