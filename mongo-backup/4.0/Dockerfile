@@ -1,9 +1,12 @@
 FROM nickbreen/cron:v1.0.0
 
+# Update package lists and install required packages
 RUN apt-get -qqy update && \
-  DEBIAN_FRONTEND=noninteractive apt-get -qqy install apache2-utils python-pip && \
-  apt-get -qqy clean && \
-  pip install s3cmd
+    DEBIAN_FRONTEND=noninteractive apt-get -qqy install apache2-utils python3-pip && \
+    apt-get -qqy clean
+
+# Install s3cmd using pip3
+RUN pip3 install s3cmd
 
 # Add mongodb org official apt source to the sources list
 ENV GPG_KEYS 9DA31620334BD75D9DCB49F368818C72E52529D4
@@ -25,7 +28,7 @@ RUN apt-get install -y mongodb-org
 
 ENV ACCESS_KEY="" SECRET_KEY="" BUCKET="" DBS="" REGION="us-east-1"
 
-ENV CRON_D_BACKUP="0 1,9,17    * * * root   /backup.sh | logger\n"
+ENV CRON_D_BACKUP="0 1,9,17 * * * root   /backup.sh | logger\n"
 
 COPY backup.sh restore.sh /
 
